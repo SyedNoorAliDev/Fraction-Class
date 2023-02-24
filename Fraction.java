@@ -4,13 +4,13 @@ public class Fraction{
     Fraction(int a, int b){
         this.num = a; this.denom = b;
     }
-    public Fraction Mul(Fraction a){
+    public Fraction Multiply(Fraction a){
         int d = this.denom * a.denom;
         int n = this.num * a.num;
         Fraction one = new Fraction(n,d);
         return (one);
     }
-    public Fraction Div(Fraction z){
+    public Fraction Divide(Fraction z){
         int d = this.denom * z.num;
         int n = this.num * z.denom;
         Fraction one = new Fraction(n,d);
@@ -22,7 +22,7 @@ public class Fraction{
         Fraction two = new Fraction(n,d);
         return (two);
     }
-    public Fraction Sub(Fraction c){
+    public Fraction Subtract(Fraction c){
         int d = this.denom * c.denom;
         int n = ((int)(d*this.num)/this.denom)-((int)(d*c.num)/c.denom);
         Fraction two = new Fraction(n,d);
@@ -64,16 +64,16 @@ public class Fraction{
         System.out.println(">>Add: " +c+" +"+d+" = "+ e);
         System.out.println(e);
         f=e;
-        e=((c.Sub(d)).Add(e)).Simplify();
+        e=((c.Subtract(d)).Add(e)).Simplify();
         System.out.println(">>Result: " +c+" - "+d+" + "+e+" = "+ e);
         e=e.Add(c.Add(d));
         System.out.println(">>Result: " +e+" + ("+c+" + "+d+") = "+ e);
-        e = c.Mul(d);
+        e = c.Multiply(d);
         System.out.println(">>Multiplication: " +c+" * "+d+" = "+ e);
-        e = c.Div(d);
+        e = c.Divide(d);
         System.out.println(">>Division: " +c+" / "+d+" = "+ e);
         Fraction frac = new Fraction(588,196);
-//        f = e.Mul(frac);
+//        f = e.Multiply(frac);
 //        System.out.println(f);
 //        Fraction g = f.Simplify();
         System.out.println(frac.Simplify());
